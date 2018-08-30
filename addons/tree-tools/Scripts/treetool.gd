@@ -22,7 +22,7 @@ func _ready():
 
 # returns data in a json string
 func get_json_string():
-	return get_dictionary().to_json()
+	return JSON.print(get_dictionary())
 	
 	
 # returns data in a dictionary
@@ -36,7 +36,7 @@ func get_dictionary():
 		"connections": editor.get_connection_list(),
 		"nodes": nodes_list
 		}
-#	print(data.to_json())
+#	print(JSON.print(data)
 	return data
 
 # Save a complete tree into a JSON file at given path
@@ -46,7 +46,7 @@ func _save_data(path):
 		
 	var file = File.new()
 	file.open(path, file.WRITE)
-	file.store_string(json_data.to_json())
+	file.store_string(JSON.print(json_data))
 	file.close()
 
 # Load a complete tree from a JSON file at given path
@@ -60,8 +60,7 @@ func _load_data( path ):
 	file.close()
 	
 	# parse json
-	var jsonData = {}
-	jsonData.parse_json(jsonString)
+	var jsonData = JSON.parse(jsonString)
 	load_from_json(jsonData)
 
 # Helper function to clear the GraphEdit
@@ -75,8 +74,7 @@ func load_from_json(jsonDataString):
 	clear()
 	
 	if (is_jsondata_valid(jsonDataString)):
-		var jsonData = {}
-		jsonData.parse_json(jsonDataString)
+		var jsonData = JSON.parse(jsonDataString)
 		
 		load_from_dict(jsonData)
 	else:
@@ -110,8 +108,7 @@ func is_jsondata_valid(jsonDataString):
 	if (jsonDataString == null):
 		isValid = false
 	else:
-		var jsonData = {}
-		jsonData.parse_json(jsonDataString)
+		var jsonData = JSON.parse(jsonDataString)
 #		print("JSONDATASTRING IS NOT NULL - OK")
 		if (!jsonData.has("nodes") or !jsonData.has("connections")):
 			isValid = false
@@ -130,14 +127,14 @@ func _on_resized():
 	editor.set_size( get_rect().size )
 
 func _on_import_button_pressed():
-	if not get_node("save_dialog").is_hidden():
-		get_node("save_dialog").hide()
+	if get_node("save_dialog").visible:
+		get_node("save_dialog").visible = false
 	get_node("load_dialog").popup_centered()
 
 
 func _on_export_button_pressed():
-	if not get_node("load_dialog").is_hidden():
-		get_node("load_dialog").hide()
+	if get_node("load_dialog").visible:
+		get_node("load_dialog").visible = false
 	get_node("save_dialog").popup_centered()
 
 func debug_grapedit():
