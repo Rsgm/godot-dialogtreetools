@@ -65,7 +65,7 @@ func edit(object):
 		# save current graph to current_object
 		if current_object is TREENODE:
 			current_object.resource.dict = tree_tools.get_dictionary()
-			var res_file = "res://dialogtrees_resources/" + current_object.get_name()+".tres"
+			var res_file = "res://dialogtrees_resources/" + current_object.name+".tres"
 			current_object.external_path = res_file
 		save_external_data()
 
@@ -107,11 +107,11 @@ func make_visible(visible):
 	if tree_tools != null:
 		if visible:
 			print("MAKE VISIBLE")
-			tree_tools.show()
+			tree_tools.visible = true
 			print(tree_tools.get_children())
 		else:
 			print("MAKE HIDDEN")
-			tree_tools.hide()
+			tree_tools.visible = false
 		print(str(tree_tools) + " " + tree_tools.name)
 
 func save_external_data():

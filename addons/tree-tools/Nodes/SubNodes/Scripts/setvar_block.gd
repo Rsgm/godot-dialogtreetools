@@ -9,11 +9,11 @@ func _ready():
 # Display GUI elements according to selected type
 func _on_type_changed(type):
 	if type == 0: # BOOLEAN
-		$hbox1/bool_value.show()
-		$hbox1/value.hide()
+		$hbox1/bool_value.visible = true
+		$hbox1/value.visible = false
 	else:
-		$hbox1/bool_value.hide()
-		$hbox1/value.show()
+		$hbox1/bool_value.visible = false
+		$hbox1/value.visible = true
 
 func get_variable():
 	if $hbox1/type.get_selected() == 0:
@@ -22,8 +22,8 @@ func get_variable():
 		return [ $hbox/name, $hbox1/type, $hbox2/value ]
 
 func get_data():
-	var id = int($hbox/id.get_text())
-	var name = $hbox/name.get_text()
+	var id = int($hbox/id.text)
+	var name = $hbox/name.text
 	var type = $hbox1/type.get_selected()
 	var data = {}
 	data["id"] = id
@@ -35,22 +35,22 @@ func get_data():
 		var bool_value = $hbox1/bool_value.is_pressed()
 		data["bool_value"] = bool_value
 	elif (type == 1): # INT
-		var value = $hbox1/value.get_text()
+		var value = $hbox1/value.text
 		data["value"] = int(value)
 	elif (type == 2): # FLOAT 
-		var value = $hbox1/value.get_text()
+		var value = $hbox1/value.text
 		data["value"] = float(value)
 	elif (type == 3): # STRING
-		var value = $hbox1/value.get_text()
+		var value = $hbox1/value.text
 		data["value"] = value
 	return data
 	
 func set_data(data):
-	$hbox/id.set_text(str(data["id"]))
-	$hbox/name.set_text(data["name"])
+	$hbox/id.text = str(data["id"])
+	$hbox/name.text = data["name"]
 	$hbox1/type.set_selected(data["type"])
 	if (data["type"] == 0):
-		$hbox1/bool_value.set_text(data["bool_value"])
+		$hbox1/bool_value.text = data["bool_value"]
 	else:
-		$hbox1/value.set_text(data["value"])
+		$hbox1/value.text = data["value"]
 	set_collapsed(data["collapsed"])

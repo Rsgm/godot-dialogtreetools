@@ -26,16 +26,16 @@ func _on_groupname_update( text ):
 func save_data(node_list):
 	node_list.push_back({
 		"type": self.type,
-		"id": get_name(),
+		"id": name,
 		"x": get_offset().x,
 		"y": get_offset().y,
-		"groupname": group_name.get_text().percent_encode()
+		"groupname": group_name.text.percent_encode()
 	})
 
 func load_data(data):
 	set_name( data["id"])
 	set_offset( Vector2(data["x"], data["y"]))
-	group_name.set_text(data["groupname"])
+	group_name.text = data["groupname"]
 	groupName = data["groupname"]
 	
 

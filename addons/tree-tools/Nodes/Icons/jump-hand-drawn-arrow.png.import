@@ -7,10 +7,7 @@ path="res://.import/jump-hand-drawn-arrow.png-e54577165f14c8cb61153d3b2847d2be.s
 [deps]
 
 source_file="res://addons/tree-tools/Nodes/Icons/jump-hand-drawn-arrow.png"
-source_md5="ab98887ec23375c2ba72d2dbdc450172"
-
 dest_files=[ "res://.import/jump-hand-drawn-arrow.png-e54577165f14c8cb61153d3b2847d2be.stex" ]
-dest_md5="87e4c847aec6cda2ca52d9a217f1adef"
 
 [params]
 

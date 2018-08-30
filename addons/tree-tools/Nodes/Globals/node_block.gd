@@ -15,14 +15,16 @@ func _ready():
 
 func set_id(v):
 	id = v
-	$hbox/id.set_text(str(id))
+	$hbox/id.text = str(id)
 
 func get_id():
 	return id
 
 func set_block_to_collapse_path(v):
 	block_to_collapse_path = v
-	if has_node(v):
+	print('test 10') # @remove
+	print(v) # @remove
+	if v and has_node(v):
 		set_block_to_collapse(get_node(v))
 
 func get_block_to_collapse_path():
@@ -43,14 +45,14 @@ func is_collapsed():
 func _on_collapse_block_pressed():
 	# security : print error if node_to_collapse not set in the block node
 	if (block_to_collapse == null):
-		printt("ERROR: Node to collapse not set in block ", self.get_name())
+		printt("ERROR: Node to collapse not set in block ", self.name)
 		pass
 	else:
-		if !block_to_collapse.is_visible():
-			block_to_collapse.show()
+		if !block_to_collapse.visible:
+			block_to_collapse.visible = true
 			is_collapsed = false
 		else:
-			block_to_collapse.hide()
+			block_to_collapse.visible = false
 			is_collapsed = true
 			if get_parent() != get_viewport():
 				printt("PARENT SIZE", get_parent().get_size())

@@ -7,10 +7,7 @@ path="res://.import/dice.png-ad96e6295b06b13e1e37351713cad16e.stex"
 [deps]
 
 source_file="res://addons/tree-tools/Nodes/Icons/dice.png"
-source_md5="d6a669e53bc441ac6239ed608b22814e"
-
 dest_files=[ "res://.import/dice.png-ad96e6295b06b13e1e37351713cad16e.stex" ]
-dest_md5="03c97dd9b452b5bd9fd6af2130a869ab"
 
 [params]
 

@@ -88,7 +88,7 @@ func load_from_dict(dict):
 	if dict.has("nodes"):
 		for n in dict["nodes"]:
 			var new_node = editor._add_node(n["type"])
-	#			printt("New node: ", n)
+			printt("New node: ", n) # @remove
 			new_node.load_data(n)
 			
 			debug_grapedit()
@@ -140,4 +140,4 @@ func _on_export_button_pressed():
 func debug_grapedit():
 	for i in editor.get_children():
 		if (i is GraphNode):
-			print(i.get_name())
+			print(i.name)

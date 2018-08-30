@@ -7,10 +7,7 @@ path="res://.import/hierarchical-structure.png-1a5e6a99b0b0ef14a7d1c15cebda52bc.
 [deps]
 
 source_file="res://addons/tree-tools/Nodes/Icons/hierarchical-structure.png"
-source_md5="75c1b98caa0cff97b17e60e0cb7198c6"
-
 dest_files=[ "res://.import/hierarchical-structure.png-1a5e6a99b0b0ef14a7d1c15cebda52bc.stex" ]
-dest_md5="9d745038f700f3351bef488b1743cd6e"
 
 [params]
 

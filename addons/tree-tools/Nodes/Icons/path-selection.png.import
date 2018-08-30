@@ -7,10 +7,7 @@ path="res://.import/path-selection.png-362387cf3b673b62439f35788e215cd1.stex"
 [deps]
 
 source_file="res://addons/tree-tools/Nodes/Icons/path-selection.png"
-source_md5="93ba9133af60e442adbb2d53bc54c53a"
-
 dest_files=[ "res://.import/path-selection.png-362387cf3b673b62439f35788e215cd1.stex" ]
-dest_md5="50ee15193d6fe3eb4bb3af5676cf6772"
 
 [params]
 

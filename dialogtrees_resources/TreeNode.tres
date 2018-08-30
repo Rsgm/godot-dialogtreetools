@@ -87,7 +87,7 @@ dict = {
          },
          "id":"node4",
          "nb_blocks":1,
-         "type":"dialog_line",
+         "type":"line",
          "x":-641.0,
          "y":-138.0
       },
@@ -110,7 +110,7 @@ dict = {
          },
          "id":"node5",
          "nb_blocks":2,
-         "type":"dialog_option",
+         "type":"option",
          "x":-274.0,
          "y":-136.0
       },
@@ -125,7 +125,7 @@ dict = {
          },
          "id":"node6",
          "nb_blocks":1,
-         "type":"dialog_line",
+         "type":"line",
          "x":90.0,
          "y":-205.0
       },
@@ -140,7 +140,7 @@ dict = {
          },
          "id":"node7",
          "nb_blocks":1,
-         "type":"dialog_line",
+         "type":"line",
          "x":97.0,
          "y":33.0
       },
@@ -163,7 +163,7 @@ dict = {
          },
          "id":"node7 2",
          "nb_blocks":2,
-         "type":"dialog_option",
+         "type":"option",
          "x":484.0,
          "y":-241.0
       },
@@ -178,7 +178,7 @@ dict = {
          },
          "id":"node8",
          "nb_blocks":1,
-         "type":"dialog_line",
+         "type":"line",
          "x":862.0,
          "y":-193.0
       },
@@ -193,7 +193,7 @@ dict = {
          },
          "id":"node9",
          "nb_blocks":1,
-         "type":"dialog_line",
+         "type":"line",
          "x":892.0,
          "y":-430.0
       },
@@ -216,7 +216,7 @@ dict = {
          },
          "id":"node10",
          "nb_blocks":2,
-         "type":"dialog_option",
+         "type":"option",
          "x":1290.0,
          "y":-134.0
       },
@@ -231,7 +231,7 @@ dict = {
          },
          "id":"node11",
          "nb_blocks":1,
-         "type":"dialog_line",
+         "type":"line",
          "x":1664.0,
          "y":-50.0
       },
@@ -246,7 +246,7 @@ dict = {
          },
          "id":"node12",
          "nb_blocks":1,
-         "type":"dialog_line",
+         "type":"line",
          "x":1723.0,
          "y":-295.0
       }

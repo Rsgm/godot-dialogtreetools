@@ -6,11 +6,11 @@ var nodes_variables = []
 
 func _init():
 	self.type = "setvar"
-	self.block_scene = "res://addons/tree-tools/Nodes/SubNodes/setvar_block.tscn"
 	self.new_block_adds_left_slot = false
 	self.new_block_adds_right_slot = false
 
 func _ready():
+	self.block_scene = load("res://addons/tree-tools/Nodes/SubNodes/setvar_block.tscn")
 	add_new_block()
 	move_child(get_node("slot"), 1)
 
@@ -20,8 +20,8 @@ func load_data(data):
 	set_type( data["type"] )
 
 func export_data(file, connections, labels):
-	file.store_line("func " + get_name() + "(c):")
-	var statement_val = statement.get_text()
+	file.store_line("func " + name + "(c):")
+	var statement_val = statement.text
 	if statement_val == "":
 		statement_val = "true"
 	var branch_true = ""

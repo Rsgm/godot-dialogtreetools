@@ -25,7 +25,7 @@ func init():
 	
 	#add start node to the scene
 	var startnode = _add_node("startnode")
-	startnode.get_node("vbox/name").set_text("start")
+	startnode.get_node("vbox/name").text = "start"
 	startnode.set_offset(startnode.get_offset() - Vector2(get_size().x,200))
 	printt("STARTNODE", startnode.get_offset())
 
@@ -50,6 +50,7 @@ func _on_editor_disconnection_request( from, from_slot, to, to_slot ):
 	self.disconnect_node(from, from_slot, to, to_slot)
 
 func _add_node(type):
+	printt('test 2: ', type) # @remove
 	var node = load("res://addons/tree-tools/Nodes/" + type + ".tscn").instance()
 	#var offset = Vector2(hscroll.get_val(), vscroll.get_val())
 	var offset = Vector2(0, 0)

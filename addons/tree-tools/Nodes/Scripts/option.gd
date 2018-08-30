@@ -3,7 +3,6 @@ extends "res://addons/tree-tools/Nodes/Globals/node.gd"
 
 func _init():
 	self.type = "option"
-	self.block_scene = "res://addons/tree-tools/Nodes/SubNodes/option_block.tscn"
 	self.new_block_collapsed = true
 	self.first_left_slot = true
 	self.first_right_slot = true
@@ -13,6 +12,7 @@ func _init():
 	self.right_slot_type = 0
 
 func _ready():
+	self.block_scene = load("res://addons/tree-tools/Nodes/SubNodes/option_block.tscn")
 	add_new_block()
 
 
@@ -27,6 +27,8 @@ func load_data(data):
 	var keyData = "data" 
 	while data.has( keyData + str(currentBlock)):
 		var new_block = add_new_block()
+		print("test 7") # @remove
+		print(new_block) # @remove
 		new_block.set_data( data[keyData + str(currentBlock)] )
 		
 		currentBlock += 1

@@ -4,6 +4,10 @@ extends "res://addons/tree-tools/Nodes/Globals/node.gd"
 onready var vbox_block = $VBoxContainer/vbox_block
 onready var statement = $vbox/statement
 
+#############################
+# line_random is still broken
+#############################
+
 
 func _init():
 	self.type = "line_random"
@@ -14,11 +18,11 @@ func _ready():
 func save_data(node_list):
 	node_list.push_back({
 		"type": self.type,
-		"id": get_name(),
+		"id": name,
 		"x": get_offset().x,
 		"y": get_offset().y,
-#		"lines": get_node("vbox_main_container/vbox_line/vbox_block/lines").get_text().percent_encode(),
-#		"anim": get_node("vbox_main_container/vbox_line/vbox_block/anim").get_text().percent_encode(),
+#		"lines": get_node("vbox_main_container/vbox_line/vbox_block/lines").text.percent_encode(),
+#		"anim": get_node("vbox_main_container/vbox_line/vbox_block/anim").text.percent_encode(),
 		"hidden": vbox_block.is_collapsed()
 	})
 
@@ -26,15 +30,15 @@ func load_data(data):
 	set_id(data["id"])
 	set_name( data["id"])
 	set_offset( Vector2(data["x"], data["y"]))
-#	get_node("vbox_main_container/vbox_line/vbox_block/lines").set_text(data["lines"])
-#	get_node("vbox_main_container/vbox_line/vbox_block/anim").set_text(data["anim"])
+#	get_node("vbox_main_container/vbox_line/vbox_block/lines").text = data["lines"]
+#	get_node("vbox_main_container/vbox_line/vbox_block/anim").text = data["anim"]
 	if data.has("hidden"):
 		if data["hidden"] == true:
 			vbox_block._on_collapse_block_pressed()
 
 func export_data(file, connections, labels):
-	file.store_line("func " + get_name() + "(c):")
-	var statement_val = statement.get_text()
+	file.store_line("func " + name + "(c):")
+	var statement_val = statement.text
 	if statement_val == "":
 		statement_val = "true"
 	var branch_true = ""

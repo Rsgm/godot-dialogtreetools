@@ -12,21 +12,21 @@ func _on_close_request():
 func save_data(node_list):
 	node_list.push_back({
 		"type": self.type,
-		"id": get_name(),
+		"id": name,
 		"x": get_offset().x,
 		"y": get_offset().y,
-		"statement": statement.get_text().percent_encode()
+		"statement": statement.text.percent_encode()
 	})
 
 func load_data(data):
 	set_id( data["id"])
 	set_name( data["id"])
 	set_offset( Vector2(data["x"], data["y"]))
-	statement.set_text(data["statement"])
+	statement.text = data["statement"]
 
 func export_data(file, connections, labels):
-	file.store_line("func " + get_name() + "(c):")
-	var statement = statement.get_text()
+	file.store_line("func " + name + "(c):")
+	var statement = statement.text
 	if statement == "":
 		statement = "true"
 	var branch_true = ""

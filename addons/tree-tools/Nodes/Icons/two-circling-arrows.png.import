@@ -7,10 +7,7 @@ path="res://.import/two-circling-arrows.png-2985ce336d2853d022e33446b6eea5f2.ste
 [deps]
 
 source_file="res://addons/tree-tools/Nodes/Icons/two-circling-arrows.png"
-source_md5="d2df92e72512b5f88d9ac76cbc7062b6"
-
 dest_files=[ "res://.import/two-circling-arrows.png-2985ce336d2853d022e33446b6eea5f2.stex" ]
-dest_md5="0899360e044e627cf1fc3a3fd31811f1"
 
 [params]
 

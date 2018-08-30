@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/tree-tools/Nodes/SubNodes/Scripts/setvar_block.gd" type="Script" id=1]
 
-[node name="setvar_block" type="VBoxContainer" index="0"]
+[node name="setvar_block" type="VBoxContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0

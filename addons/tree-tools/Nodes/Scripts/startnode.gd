@@ -12,21 +12,21 @@ func save_data(nodes_list):
 	
 	nodes_list.push_back({
 		"type": self.type,
-		"id": get_name(),
+		"id": name,
 		"x": get_offset().x,
 		"y": get_offset().y,
-		"name": $vbox/name.get_text()
+		"name": $vbox/name.text
 	})
 
 func load_data(data):
 	set_id( data["id"])
 	set_name( data["id"])
 	set_offset( Vector2(data["x"], data["y"]))
-	$vbox/name.set_text(data["name"])
+	$vbox/name.text = data["name"]
 
 func export_data(file, connections, labels):
 	var next = ""
-	var name_val = $vbox/name.get_text().percent_encode()
+	var name_val = $vbox/name.text.percent_encode()
 	for c in connections:
 		next = c["to"]
 	labels[name_val] = next

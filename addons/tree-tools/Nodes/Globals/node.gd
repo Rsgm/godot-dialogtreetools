@@ -50,7 +50,7 @@ func _ready():
 
 
 func _on_raise_request(raised_node):
-	print("Raise request on graphnode " + get_name())
+	print("Raise request on graphnode " + name)
 
 
 func set_type(new):
@@ -80,7 +80,7 @@ func get_block_scene():
 func save_data(node_list):
 	var nodeDict = {
 			"type": self.type,
-			"id": get_name(),
+			"id": name,
 			"x": get_offset().x,
 			"y": get_offset().y,
 			"nb_blocks": nb_blocks
@@ -107,6 +107,8 @@ func _on_close_request():
 
 # instance a scene to add as a block in the GraphNode.
 func add_new_block():
+	print('test 9') # @remove
+	print(block_scene) # @remove
 	var block = block_scene.instance()
 	
 	# Set a free id if there is
@@ -158,7 +160,7 @@ func add_new_block():
 func add_addbutton(block):
 	var btnAdd = Button.new()
 	btnAdd.set_name("addbtn")
-	btnAdd.set_text("+")
+	btnAdd.text = "+"
 	btnAdd.connect("pressed", self, "_on_add_pressed")
 	block.get_node("hbox").add_child(btnAdd)
 	
@@ -166,18 +168,18 @@ func add_addbutton(block):
 func add_rembutton(block):
 	var btnRemove = Button.new()
 	btnRemove.set_name("rembtn")
-	btnRemove.set_text("-")
+	btnRemove.text = "-"
 	#print(parent)
 	btnRemove.connect("pressed", self, "_on_remove_pressed", [block])
 	block.get_node("hbox").add_child(btnRemove)
 
 # hide the "-" button
 func hide_rembutton(block):
-	block.get_node("hbox/rembtn").hide()
+	block.get_node("hbox/rembtn").visible = false
 	
 # display the "-" button
 func show_rembutton(block):
-	block.get_node("hbox/rembtn").show()
+	block.get_node("hbox/rembtn").visible = true
 
 # Add block button pressed
 func _on_add_pressed():

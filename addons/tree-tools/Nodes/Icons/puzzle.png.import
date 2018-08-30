@@ -7,10 +7,7 @@ path="res://.import/puzzle.png-900830752db23ee9a52f43b55db429df.stex"
 [deps]
 
 source_file="res://addons/tree-tools/Nodes/Icons/puzzle.png"
-source_md5="8554e0a69f363db9628514c6f12e2864"
-
 dest_files=[ "res://.import/puzzle.png-900830752db23ee9a52f43b55db429df.stex" ]
-dest_md5="abcca9308de1a225c6aa6eb3bf11d02c"
 
 [params]
 
