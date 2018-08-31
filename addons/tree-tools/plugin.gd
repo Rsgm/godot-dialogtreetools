@@ -25,11 +25,11 @@ func _enter_tree():
 func _exit_tree():
 	if tree_tools != null:
 		get_editor_interface().get_editor_viewport().remove_child(tree_tools)
-		tree_tools.clear()
-		tree_tools.queue_free()
+#		tree_tools.clear()
+#		tree_tools.queue_free()
 	remove_custom_type("TreeNode")
 	remove_custom_type("TreeNodeResource")
-	
+
 
 # OVERRIDE
 # Plugin name
@@ -80,7 +80,7 @@ func edit(object):
 	debug_print(current_object)
 	
 	# load new current_object data into graph
-	#tree_tools.clear()
+	tree_tools.clear()
 
 	if current_object is TREENODE:
 		if current_object.resource != null && current_object.resource is TREENODERESOURCE:
@@ -130,7 +130,7 @@ func save_external_data():
 				print("Saving TreeNode in > ", current_object.external_path)
 			else:
 				print("Error saving TreeNode: Resource external path is null")
-				
+
 
 func instanciate_treetool():
 	tree_tools = TREETOOL.instance()

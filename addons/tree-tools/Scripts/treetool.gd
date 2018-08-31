@@ -29,6 +29,7 @@ func get_json_string():
 func get_dictionary():
 	var nodes_list = []
 	print("Get Dictionary " + str(editor)) 
+	
 	for gn in editor.get_children():
 		if gn is GraphNode:
 			gn.save_data(nodes_list)
@@ -36,7 +37,8 @@ func get_dictionary():
 		"connections": editor.get_connection_list(),
 		"nodes": nodes_list
 		}
-#	print(JSON.print(data)
+	print('test 12')
+	print(JSON.print(data))
 	return data
 
 # Save a complete tree into a JSON file at given path
@@ -65,12 +67,14 @@ func _load_data( path ):
 
 # Helper function to clear the GraphEdit
 func clear():
+	print('test 13: clear')
 	editor.clear()
 
 
 # Load data from a JSON string (given in jsonData)
 func load_from_json(jsonDataString):
 	# remove all nodes in editor
+	print('test 15')
 	clear()
 	
 	if (is_jsondata_valid(jsonDataString)):
@@ -83,6 +87,9 @@ func load_from_json(jsonDataString):
 # Load graph data from dictionary
 func load_from_dict(dict):
 	print_stack()
+	
+	print('test 20')
+	clear()
 	
 	# add new nodes
 	if dict.has("nodes"):

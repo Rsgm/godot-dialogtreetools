@@ -5,6 +5,7 @@
 [resource]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Resource" ]
 dict = {
 "connections": [ {
 "from": "node3",
@@ -105,8 +106,16 @@ dict = {
 "option": "Why do you bother?",
 "repeat": false
 },
+"data2": {
+"collapsed": false,
+"condition": "",
+"id": 2,
+"not_said": false,
+"option": "blah",
+"repeat": false
+},
 "id": "node5",
-"nb_blocks": 2,
+"nb_blocks": 3,
 "type": "option",
 "x": -274.0,
 "y": -136.0
