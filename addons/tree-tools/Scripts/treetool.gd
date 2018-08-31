@@ -88,7 +88,6 @@ func load_from_dict(dict):
 	if dict.has("nodes"):
 		for n in dict["nodes"]:
 			var new_node = editor._add_node(n["type"])
-			printt("New node: ", n) # @remove
 			new_node.load_data(n)
 			
 			debug_grapedit()

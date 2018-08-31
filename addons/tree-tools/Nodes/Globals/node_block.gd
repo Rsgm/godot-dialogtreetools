@@ -22,8 +22,6 @@ func get_id():
 
 func set_block_to_collapse_path(v):
 	block_to_collapse_path = v
-	print('test 10') # @remove
-	print(v) # @remove
 	if v and has_node(v):
 		set_block_to_collapse(get_node(v))
 

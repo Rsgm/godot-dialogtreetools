@@ -27,8 +27,6 @@ func load_data(data):
 	var keyData = "data" 
 	while data.has( keyData + str(currentBlock)):
 		var new_block = add_new_block()
-		print("test 7") # @remove
-		print(new_block) # @remove
 		new_block.set_data( data[keyData + str(currentBlock)] )
 		
 		currentBlock += 1
