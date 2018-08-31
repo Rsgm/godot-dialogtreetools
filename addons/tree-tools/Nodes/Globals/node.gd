@@ -29,7 +29,6 @@ onready var free_ids = []
 onready var max_id_blocks = 0
 
 
-
 func _ready():
 	# security
 	if (new_block_collapsed == null):
@@ -107,8 +106,6 @@ func _on_close_request():
 
 # instance a scene to add as a block in the GraphNode.
 func add_new_block():
-	print('test 9') # @remove
-	print(block_scene) # @remove
 	var block = block_scene.instance()
 	
 	# Set a free id if there is

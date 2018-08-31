@@ -52,12 +52,12 @@ func execute_dialog(parent):
 	
 	var node = nodesList[0]
 	
-	if node.type == "dialog_line":
+	if node.type == "line":
 		lines_list = node.data0.dialog.split("%%")
 		dialogs_count_in_state = 0
 		update_line()
 		
-	elif node.type == "dialog_option":
+	elif node.type == "option":
 		var options_list = []
 		for i in range(0, node.nb_blocks):
 			options_list.append(node["data"+str(i)])

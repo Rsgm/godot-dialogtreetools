@@ -5,6 +5,6 @@ extends Button
 # var b = "textvar"
 
 func _ready():
-	print(get_tree().get_root().get_node("dialog_manager"))
+	print(get_node("../../dialog_manager"))
 	connect("pressed", get_node("../../dialog_manager"), "execute_dialog", [self.get_parent()])
 

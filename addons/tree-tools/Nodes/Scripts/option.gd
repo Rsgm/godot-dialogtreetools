@@ -20,7 +20,6 @@ func load_data(data):
 	clear_blocks()
 	set_id( data["id"] )
 	set_name( data["id"] )
-	
 	set_offset( Vector2(data["x"], data["y"]))
 
 	var currentBlock = 0
