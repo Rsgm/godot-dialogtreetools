@@ -50,7 +50,9 @@ func set_data(data):
 	$hbox/name.text = data["name"]
 	$hbox1/type.selected = data["type"]
 	if (data["type"] == 0):
-		$hbox1/bool_value.text = data["bool_value"]
+		$hbox1/bool_value.pressed = data["bool_value"]
 	else:
 		$hbox1/value.text = data["value"]
-	set_collapsed(data["collapsed"])
+		
+#	I'm not sure where this method is, so don't collapse on load	
+#	set_collapsed(data["collapsed"])
