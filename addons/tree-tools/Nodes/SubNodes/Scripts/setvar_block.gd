@@ -48,7 +48,7 @@ func get_data():
 func set_data(data):
 	$hbox/id.text = str(data["id"])
 	$hbox/name.text = data["name"]
-	$hbox1/type.set_selected(data["type"])
+	$hbox1/type.selected = data["type"]
 	if (data["type"] == 0):
 		$hbox1/bool_value.text = data["bool_value"]
 	else:

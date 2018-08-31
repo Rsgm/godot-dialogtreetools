@@ -63,6 +63,12 @@ dict = {
 "to_port": 0
 } ],
 "nodes": [ {
+"id": "node1",
+"name": "start",
+"type": "startnode",
+"x": -1604.0,
+"y": -400.0
+}, {
 "id": "node3",
 "name": "start",
 "type": "startnode",
@@ -99,16 +105,8 @@ dict = {
 "option": "Why do you bother?",
 "repeat": false
 },
-"data3": {
-"collapsed": false,
-"condition": "",
-"id": 3,
-"not_said": false,
-"option": "test",
-"repeat": false
-},
 "id": "node5",
-"nb_blocks": 3,
+"nb_blocks": 2,
 "type": "option",
 "x": -274.0,
 "y": -136.0
@@ -242,7 +240,7 @@ dict = {
 "y": -295.0
 }, {
 "data0": {
-"bool_value": true,
+"bool_value": false,
 "collapsed": false,
 "id": 0,
 "name": "foo",
